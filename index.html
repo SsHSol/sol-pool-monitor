@@ -235,27 +235,6 @@
     }
     .create-note strong { color: #a78bfa; font-weight: 500; }
 
-    /* ===== Progress Steps ===== */
-    .steps { display: flex; gap: 6px; margin-bottom: 16px; }
-    .step { flex: 1; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.06); transition: background 0.3s; }
-    .step.active { background: linear-gradient(90deg, #7c3aed, #6366f1); }
-    .step.done { background: #22c55e; }
-
-    /* ===== Log Area ===== */
-    .log-area {
-      min-height: 120px; max-height: 280px; overflow-y: auto;
-      font-family: 'SF Mono', 'Consolas', monospace; font-size: 12px; line-height: 1.7;
-      color: #9898b0; white-space: pre-wrap; word-break: break-all;
-    }
-    .log-area > div { padding: 1px 0; }
-    .log-info { color: #9898b0; }
-    .log-success { color: #22c55e; }
-    .log-error { color: #ef4444; }
-    .log-warning { color: #f59e0b; }
-    .log-hint { font-family: 'Inter', sans-serif; font-size: 13px; color: #555570; }
-    .log-area::-webkit-scrollbar { width: 4px; }
-    .log-area::-webkit-scrollbar-track { background: transparent; }
-    .log-area::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.06); border-radius: 2px; }
 
     /* ===== Result Card ===== */
     .result-card {
@@ -473,24 +452,6 @@
       创建代币过程受链上网络环境影响。如果交易失败，请重试或<strong>开启 VPN</strong> 后再试
     </div>
 
-    <!-- ===== Progress ===== -->
-    <div class="steps">
-      <div class="step"></div>
-      <div class="step"></div>
-      <div class="step"></div>
-      <div class="step"></div>
-    </div>
-
-    <!-- ===== Log ===== -->
-    <div class="card">
-      <div class="card-title">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#686880" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        <span>执行日志</span>
-      </div>
-      <div id="status" class="log-area">
-        <span class="log-hint">连接钱包后即可创建代币 ✦</span>
-      </div>
-    </div>
 
     <!-- ===== Result ===== -->
     <div id="result" class="result-card"></div>
