@@ -235,6 +235,23 @@
     }
     .create-note strong { color: #a78bfa; font-weight: 500; }
 
+    /* ===== Progress Text ===== */
+    .progress-text {
+      text-align: center;
+      font-size: 14px;
+      color: #818cf8;
+      margin-bottom: 16px;
+      min-height: 22px;
+      font-weight: 500;
+      transition: opacity 0.3s;
+    }
+    .progress-text.done {
+      color: #22c55e;
+    }
+    .progress-text.error {
+      color: #ef4444;
+    }
+
 
     /* ===== Result Card ===== */
     .result-card {
@@ -448,8 +465,10 @@
       <span class="spinner"></span>
     </button>
 
+    <div id="progress-text" class="progress-text"></div>
+
     <div class="create-note">
-      创建代币过程受链上网络环境影响。如果交易失败，请重试或<strong>开启 VPN</strong> 后再试
+      每次创建收取 <strong>0.025 SOL</strong> 手续费 · 创建过程受链上网络环境影响，如果交易失败请重试
     </div>
 
 
