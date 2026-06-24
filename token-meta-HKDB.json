@@ -1,0 +1,6 @@
+{
+  "name": "Hong Kong Digital Buck",
+  "symbol": "HKDB",
+  "image": "https://raw.githubusercontent.com/SsHSol/sol-pool-monitor/main/token-image-HKDB.png",
+  "description": "HKDB  是由保信债权管理有限公司在香港金融管理局监管框架下发行的港币锚定合规稳定币。每枚 KHDB 与 1 港币等值挂钩，采用链下法币全额储备模式，确保代币价值稳定、可兑付。该项目正按照香港《稳定币条例》（第656章）及金管局发牌制度要求推进合规进程，已正式提交牌照申请，计划于监管批准后推出市场。KHDB 主要应用于跨境支付、数字资产交易、RWA 结算及供应链金融等领域，旨在成为连接传统金融与 Web3 生态的合规稳定币基础设施。"
+}
