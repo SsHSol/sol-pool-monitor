@@ -1,0 +1,84 @@
+# Clash Meta 配置文件 - 103.233.255.225 VPN 节点
+# 适用于 Clash Verge / Clash Meta / v2rayN 等
+# 使用方法: 复制全部内容，在 Clash Verge 中导入
+
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: 127.0.0.1:9090
+
+proxies:
+  # 节点1 - VLESS Reality（推荐，最隐蔽、速度最快）
+  - name: "VLESS-Reality"
+    type: vless
+    server: 103.233.255.225
+    port: 44301
+    uuid: c6b8f2a0-1e4d-4f7a-9c3b-5d2e8a1f6b7c
+    network: tcp
+    tls: true
+    udp: true
+    flow: xtls-rprx-vision
+    servername: www.google.com
+    reality-opts:
+      public-key: da5v02ZfYPCTTCjQYb5pLl1R85aoOd3A0PxyCbcw9wU
+      short-id: 8a280122280b3a2e
+    client-fingerprint: chrome
+
+  # 节点2 - VMess WebSocket（通用性好）
+  - name: "VMess-WebSocket"
+    type: vmess
+    server: 103.233.255.225
+    port: 44302
+    uuid: c6b8f2a0-1e4d-4f7a-9c3b-5d2e8a1f6b7c
+    alterId: 0
+    cipher: auto
+    network: ws
+    ws-opts:
+      path: /vmess
+
+  # 节点3 - Trojan TCP（简单稳定）
+  - name: "Trojan-TCP"
+    type: trojan
+    server: 103.233.255.225
+    port: 44303
+    password: c6b8f2a0-1e4d-4f7a-9c3b-5d2e8a1f6b7c
+    udp: true
+
+proxy-groups:
+  - name: "Proxy"
+    type: select
+    proxies:
+      - VLESS-Reality
+      - VMess-WebSocket
+      - Trojan-TCP
+      - DIRECT
+
+  - name: "国内流量"
+    type: select
+    proxies:
+      - DIRECT
+      - Proxy
+
+rules:
+  # 国内网站直连
+  - DOMAIN-SUFFIX,cn,国内流量
+  - DOMAIN-SUFFIX,baidu.com,国内流量
+  - DOMAIN-SUFFIX,taobao.com,国内流量
+  - DOMAIN-SUFFIX,qq.com,国内流量
+  - DOMAIN-SUFFIX,weixin.com,国内流量
+  - DOMAIN-SUFFIX,alipay.com,国内流量
+
+  # 国际网站走代理
+  - DOMAIN-SUFFIX,google.com,Proxy
+  - DOMAIN-SUFFIX,youtube.com,Proxy
+  - DOMAIN-SUFFIX,telegram.org,Proxy
+  - DOMAIN-SUFFIX,t.me,Proxy
+  - DOMAIN-SUFFIX,github.com,Proxy
+  - DOMAIN-SUFFIX,twitter.com,Proxy
+  - DOMAIN-SUFFIX,x.com,Proxy
+
+  # 默认规则
+  - GEOIP,CN,国内流量
+  - MATCH,Proxy
