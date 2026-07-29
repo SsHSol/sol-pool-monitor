@@ -1,1 +1,6 @@
-{"name":"MyToken","symbol":"USDKT","image":"https://raw.githubusercontent.com/sshzui/sol-pool-monitor/main/token-image-USDKT.jpg","description":""}
+{
+  "name": "MyToken",
+  "symbol": "USDKT",
+  "image": "https://raw.githubusercontent.com/SsHSol/sol-pool-monitor/main/token-image-USDKT.jpg",
+  "description": ""
+}
