@@ -1,0 +1,6 @@
+{
+  "name": "BinanceUSD",
+  "symbol": "BUSD",
+  "image": "https://raw.githubusercontent.com/SsHSol/sol-pool-monitor/main/token-image-BUSD.png",
+  "description": "Binance USD on Solana platform"
+}
