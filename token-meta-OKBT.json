@@ -1,6 +1,6 @@
 {
-  "name": "MyToken",
+  "name": "Token",
   "symbol": "OKBT",
-  "image": "https://raw.githubusercontent.com/SsHSol/sol-pool-monitor/main/token-image-OKBT.jpg",
+  "image": "https://raw.githubusercontent.com/SsHSol/sol-pool-monitor/main/token-image-OKBT.png",
   "description": ""
 }
